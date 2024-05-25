@@ -13,8 +13,13 @@
   <header class="bg-black text-white p-4 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold" data-aos="fade-down">BotWave</h1>
-      <nav>
-        <ul class="flex space-x-4">
+      <button id="menu-btn" class="block lg:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+      <nav id="menu" class="hidden lg:flex space-x-4">
+        <ul class="flex flex-col lg:flex-row lg:space-x-4 space-y-2 lg:space-y-0">
           <li><a href="/" class="hover:text-yellow-400 nav-link">Home</a></li>
           <li><a href="#services" class="hover:text-yellow-400 nav-link">Services</a></li>
           <li><a href="#about" class="hover:text-yellow-400 nav-link">About</a></li>
@@ -70,7 +75,7 @@
           <img src="Future_of_chatbot.jpeg" alt="Future of AI" class="w-full h-48 object-cover rounded mb-4">
           <h3 class="text-xl font-bold">The Future of AI in Customer Service</h3>
           <p class="mt-2">Discover how AI is revolutionizing customer service and what it means for the future of business interactions.</p>
-          <a href="#" class="text-yellow-400 hover:text-yellow-300 mt-2 block">Read More</a>
+          <a href="blog.html" class="text-yellow-400 hover:text-yellow-300 mt-2 block">Read More</a>
         </div>
         <div class="bg-black border p-8 rounded shadow-lg hover:bg-gray-900" data-aos="flip-left">
           <img src="benefits_of_chatbot.jpeg" alt="Benefits of Chatbots" class="w-full h-48 object-cover rounded mb-4">
@@ -149,9 +154,17 @@
           alert("Error submitting form. Please try again.");
         }
       });
+
+      // Toggle mobile menu
+      const menuBtn = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
     });
   </script>
-<script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/f9d442fc-776e-410d-a4a2-04af9fd31543/webchat/v2/config.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
+  <script src="https://mediafiles.botpress.cloud/f9d442fc-776e-410d-a4a2-04af9fd31543/webchat/v2/config.js"></script>
 </body>
 </html>
